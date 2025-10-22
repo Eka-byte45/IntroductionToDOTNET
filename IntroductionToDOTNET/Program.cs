@@ -1,4 +1,6 @@
 ﻿//#define CONSOLE
+#define CHECK
+//#define HOME_CHECK
 using System;//#include
 using System.Collections.Generic;
 using System.Linq;
@@ -47,20 +49,26 @@ namespace IntroductionToDOTNET
 
 
 #endif
-			//Console.Write("Введите ваше имя: ");
-			//string firstName=Console.ReadLine();
 
-			//Console.Write("Введите вашу фамилию: ");
-			//string lastName=Console.ReadLine();
+#if CHECK
+			Console.Write("Введите ваше имя: ");
+			string firstName = Console.ReadLine();
 
-			//Console.Write("Введите ваш возраст: ");
-			//int age = Convert.ToInt32(Console.ReadLine());
+			Console.Write("Введите вашу фамилию: ");
+			string lastName = Console.ReadLine();
 
-			//Console.WriteLine(lastName+" "+firstName+" "+age);//конкатенация строк
-			//Console.WriteLine(String.Format( "{0} {1} {2}",lastName,firstName,age ));//форматирование строк
-			//Console.WriteLine($"{lastName} {firstName} {age}");//итерполяция строк
+			Console.Write("Введите ваш возраст: ");
+			int age = Convert.ToInt32(Console.ReadLine());
+
+			Console.WriteLine(lastName + " " + firstName + " " + age);//конкатенация строк
+			Console.WriteLine(String.Format("{0} {1} {2}", lastName, firstName, age));//форматирование строк
+			Console.WriteLine($"{lastName} {firstName} {age}");//итерполяция строк
 
 
+
+#endif
+
+#if HOME_CHECK
 			//Console.Write("Введите размер: ");
 			//int size = Convert.ToInt32(Console.ReadLine());
 			//1. Квадрат
@@ -324,13 +332,13 @@ namespace IntroductionToDOTNET
 			//				DrawEmptyCell(cellSize);
 			//			}
 			//		}
-					
+
 			//		Console.WriteLine();
 			//	}
 			//}
 
-			int boardSize = 8; // Размер шахматной доски (8x8)
-			int cellSize = 5;  // Размер клетки (3x3)
+			int boardSize = 8; 
+			int cellSize = 5;  
 
 			// Внешний цикл для строк шахматной доски
 			for (int row = 0; row < boardSize * cellSize; row++)
@@ -338,26 +346,23 @@ namespace IntroductionToDOTNET
 				// Внутренний цикл для столбцов шахматной доски
 				for (int col = 0; col < boardSize * cellSize; col++)
 				{
-					// Определим, какую клетку рисовать: пустую или заполненную звёздочками
+					
 					if (((row / cellSize) + (col / cellSize)) % 2 == 0)
 					{
-						// Чёрная клетка (звёздочки)
+						
 						Console.Write("* ");
 					}
 					else
 					{
-						// Белая клетка (пустота)
+						
 						Console.Write("  ");
 					}
 				}
-				// Переходим на новую строку после полного ряда
+				
 				Console.WriteLine();
 			}
 			Thread.Sleep(3000);
+#endif
 		}
-
-
-		
-		
 	}
 }
