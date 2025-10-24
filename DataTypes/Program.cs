@@ -1,6 +1,6 @@
-﻿#define DATA_TYPES
-//#define CONSTANS
-//#define TYPE_CONVERTIONS
+﻿//#define DATA_TYPES
+//#define CONSTANT
+#define TYPE_CONVERTIONS
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -143,19 +143,21 @@ $@"decimal занимает {sizeof(decimal)} Байт памяти
 
 #if TYPE_CONVERTIONS
 			int n = 5;
-			while(n-- > 0 )
+			while (n-- > 0)
 			{
 				Console.WriteLine(n);
 			}
+			//while (n > 0) { Console.WriteLine(n); n--; }
+
 			Console.WriteLine(delimetr);
 			//ushort b = (ushort)-2;
 			//Console.WriteLine(b);
 			double a = 2.2;
 			short b = (short)a;
-            Console.WriteLine(b);
+			Console.WriteLine(b);
 			//bool rain = Convert.ToBoolean("True");
 			bool rain = bool.Parse("False");
-            Console.WriteLine(rain);
+			Console.WriteLine(rain);
 #endif
 		}
 	}
